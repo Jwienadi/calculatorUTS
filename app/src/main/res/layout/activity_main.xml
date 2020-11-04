@@ -1,18 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/whitegrey">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/tvcalculate"
+        style="@style/CalcTv"
+        android:layout_marginTop="30dp"
+        android:text=""
+        android:textSize="60sp"
+        android:textColor="@color/black"
+        android:layout_marginEnd="10dp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="30sp"
+        android:autoSizeMaxTextSize="60sp"
+        android:autoSizeStepGranularity="3sp"
+        android:maxLines="2"
+        />
+    <TextView
+        android:id="@+id/tvresult"
+        style="@style/CalcTv"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="10dp"
+        android:text=""
+        android:textSize="50sp"
+        android:textColor="@color/grey"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+             android:layout_weight="1"
+            android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+            android:id="@+id/btnc"
+            android:text="C"
+            style="@style/CalcBtn"
+            tools:ignore="NestedWeights"
+            android:textColor="@color/red"/>
+            <Button
+            android:id="@+id/btnfloor"
+            android:text="floor"
+            style="@style/CalcBtn"
+            android:textSize="19sp"
+            />
+            <Button
+            android:id="@+id/btnceiling"
+            android:text="ceiling"
+            style="@style/CalcBtn"
+            android:textSize="19sp"
+            />
+            <Button
+            android:id="@+id/btnround"
+            android:text="round"
+            style="@style/CalcBtn"
+            android:textSize="19sp"
+            />
+            <Button
+            android:id="@+id/btnkurung"
+            android:text="( )"
+            style="@style/CalcBtn"
+            />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnac"
+                android:text="AC"
+                style="@style/CalcBtn"
+                android:textColor="@color/red"/>
+            <Button
+                android:id="@+id/btnakar"
+                android:text="√"
+                style="@style/CalcBtn"
+                />
+            <Button
+                android:id="@+id/btnkuadrat"
+                android:text="x²"
+                style="@style/CalcBtn"
+                />
+            <Button
+                android:id="@+id/btnbagi"
+                android:text="÷"
+                style="@style/CalcBtn"
+                android:textSize="40sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn7"
+                android:text="7"
+                style="@style/CalcBtn"
+                tools:ignore="NestedWeights" />
+            <Button
+                android:id="@+id/btn8"
+                android:text="8"
+                style="@style/CalcBtn"
+                />
+            <Button
+                android:id="@+id/btn9"
+                android:text="9"
+                style="@style/CalcBtn"
+                />
+            <Button
+                android:id="@+id/btnkali"
+                android:text="✕"
+                style="@style/CalcBtn"
+                android:textSize="30sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn4"
+                android:text="4"
+                style="@style/CalcBtn" />
+            <Button
+                android:id="@+id/btn5"
+                android:text="5"
+                style="@style/CalcBtn"
+                />
+            <Button
+                android:id="@+id/btn6"
+                android:text="6"
+                style="@style/CalcBtn"
+                />
+            <Button
+                android:id="@+id/btnmin"
+                android:text="−"
+                style="@style/CalcBtn"
+                android:textSize="40sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btn1"
+                android:text="1"
+                style="@style/CalcBtn" />
+            <Button
+                android:id="@+id/btn2"
+                android:text="2"
+                style="@style/CalcBtn"
+                />
+            <Button
+                android:id="@+id/btn3"
+                android:text="3"
+                style="@style/CalcBtn"
+
+                />
+            <Button
+                android:id="@+id/btntambah"
+                android:text="+"
+                style="@style/CalcBtn"
+                android:textSize="40sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btnkoma"
+                android:text="."
+                style="@style/CalcBtn" />
+            <Button
+                android:id="@+id/btn0"
+                android:text="0"
+                style="@style/CalcBtn"
+                />
+            <Button
+                android:id="@+id/btnsamadengan"
+                android:text="="
+                style="@style/CalcBtn"
+                android:layout_weight="2"
+                android:textSize="40sp"
+                tools:ignore="NestedWeights" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
