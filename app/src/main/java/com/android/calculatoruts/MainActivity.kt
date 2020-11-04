@@ -13,8 +13,7 @@ import kotlin.math.round
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var calc: String
-    lateinit var res: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,10 +38,13 @@ class MainActivity : AppCompatActivity() {
         btnkurung.setOnClickListener { displayKurung() }
 
         btnakar.setOnClickListener {
+            try{
             if(lastIsOperator() || tvcalculate.text == "" ){
                 displayCalcNum("√(")
             }else {
                 displayCalcNum("x√(")
+            }} catch (e:Exception){
+                Toast.makeText(this,"Invalid Format Used",Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -59,27 +61,39 @@ class MainActivity : AppCompatActivity() {
 
         }
     private fun floorhasil(){
-        hasil()
-        var angka:Double =tvresult.text.toString().toDouble()
-        tvresult.text= floor(angka).toInt().toString()
+        try {
+        if (tvcalculate.text!="") {
+            hasil()
+            var angka: Double = tvresult.text.toString().toDouble()
+            tvresult.text = floor(angka).toInt().toString()
+        } } catch (e:Exception){
+        Toast.makeText(this,"Invalid Format Used",Toast.LENGTH_SHORT).show()
+    }
     }
     private  fun ceilhasil(){
+        try {
+
+        if (tvcalculate.text!="") {
         hasil()
         var angka:Double =tvresult.text.toString().toDouble()
         tvresult.text= ceil(angka).toInt().toString()
+        } } catch (e:Exception){
+            Toast.makeText(this,"Invalid Format Used",Toast.LENGTH_SHORT).show()
+        }
     }
     private fun roundhasil(){
+        try {
+        if (tvcalculate.text!="") {
         hasil()
         var angka:Double =tvresult.text.toString().toDouble()
         tvresult.text= (round(angka * 10.0)/10.0).toString()
-
+        } } catch (e:Exception){
+            Toast.makeText(this,"Invalid Format Used",Toast.LENGTH_SHORT).show()
+        }
     }
 
 
     private fun displayCalcNum(input: String) {
-//            calc+=input
-//            tvcalculate.text=calc.replace("*","x")
-
         tvcalculate.append(input)
     }
 
@@ -94,19 +108,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun displayCalcOperator(input: String) {
-//            calc+=input
-//            tvcalculate.text=calc.replace("*","x")
-//        var lastindex=tvcalculate.text.reversed()[0]
-//        var alloperator="/x+-"
+
         try {
+            var last=tvcalculate.text.reversed()[0].toString()
+            if (tvcalculate.text!="" && last!="(") {
             if(lastIsOperator()){
                 tvcalculate.text=tvcalculate.text.dropLast(1)
                 tvcalculate.append(input)
             } else{
                 tvcalculate.append(input)
-            }
+            }}
         } catch (e:Exception){
-            Toast.makeText(this,"Invalid Format Used",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Invalid Format Used",Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -122,8 +135,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun clear(){
-//        tvcalculate.text=tvcalculate.text.dropLast(1)
-//        tvresult.text=tvresult.text.drop(tvresult.text.length)
+
         if ("/+x-" in tvcalculate.text) {
             while (!lastIsOperator()) {
                 tvcalculate.text = tvcalculate.text.dropLast(1)
@@ -138,16 +150,13 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-//        tvcalculate.setTextSize(60F)
-//        this.calc.dropLast(1)
-//        tvcalculate.text=this.calc.replace("*","x")
+
     }
     private fun allclear(){
-        tvcalculate.text=tvcalculate.text.drop(tvcalculate.text.length)
-        tvresult.text=tvresult.text.drop(tvresult.text.length)
-//        tvcalculate.setTextSize(60F)
-//        this.calc.drop(this.calc.length)
-//        tvcalculate.text=this.calc.replace("*","x")
+//        tvcalculate.text=tvcalculate.text.drop(tvcalculate.text.length)
+//        tvresult.text=tvresult.text.drop(tvresult.text.length)
+        tvcalculate.text=""
+        tvresult.text=""
     }
 
     private fun hasil(){
@@ -163,12 +172,10 @@ class MainActivity : AppCompatActivity() {
         } else {
             tvresult.text=hasil.toString()
         }
-//        tvcalculate.setTextSize(60F)
 
-//        Toast.makeText(this,hasil.toString(),Toast.LENGTH_LONG).show()
 
         } catch (e:Exception){
-            Toast.makeText(this,"Invalid Format Used",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Invalid Format Used",Toast.LENGTH_SHORT).show()
         }
 
     }
