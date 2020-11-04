@@ -44,31 +44,31 @@
 
             <Button
             android:id="@+id/btnc"
-            android:text="C"
+            android:text="@string/c"
             style="@style/CalcBtn"
             tools:ignore="NestedWeights"
             android:textColor="@color/red"/>
             <Button
             android:id="@+id/btnfloor"
-            android:text="floor"
+            android:text="@string/floor"
             style="@style/CalcBtn"
             android:textSize="19sp"
             />
             <Button
             android:id="@+id/btnceiling"
-            android:text="ceiling"
+            android:text="@string/ceiling"
             style="@style/CalcBtn"
             android:textSize="19sp"
             />
             <Button
             android:id="@+id/btnround"
-            android:text="round"
+            android:text="@string/round"
             style="@style/CalcBtn"
             android:textSize="19sp"
             />
             <Button
             android:id="@+id/btnkurung"
-            android:text="( )"
+            android:text="@string/kurung"
             style="@style/CalcBtn"
             />
 
@@ -80,22 +80,22 @@
             android:orientation="horizontal">
             <Button
                 android:id="@+id/btnac"
-                android:text="AC"
+                android:text="@string/ac"
                 style="@style/CalcBtn"
                 android:textColor="@color/red"/>
             <Button
                 android:id="@+id/btnakar"
-                android:text="√"
+                android:text="@string/akar"
                 style="@style/CalcBtn"
                 />
             <Button
                 android:id="@+id/btnkuadrat"
-                android:text="x²"
+                android:text="@string/x"
                 style="@style/CalcBtn"
                 />
             <Button
                 android:id="@+id/btnbagi"
-                android:text="÷"
+                android:text="@string/bagi"
                 style="@style/CalcBtn"
                 android:textSize="40sp"
                 />
@@ -108,22 +108,22 @@
             android:orientation="horizontal">
             <Button
                 android:id="@+id/btn7"
-                android:text="7"
+                android:text="@string/_7"
                 style="@style/CalcBtn"
                 tools:ignore="NestedWeights" />
             <Button
                 android:id="@+id/btn8"
-                android:text="8"
+                android:text="@string/_8"
                 style="@style/CalcBtn"
                 />
             <Button
                 android:id="@+id/btn9"
-                android:text="9"
+                android:text="@string/_9"
                 style="@style/CalcBtn"
                 />
             <Button
                 android:id="@+id/btnkali"
-                android:text="✕"
+                android:text="@string/kali"
                 style="@style/CalcBtn"
                 android:textSize="30sp"
                 />
@@ -136,21 +136,21 @@
             android:orientation="horizontal">
             <Button
                 android:id="@+id/btn4"
-                android:text="4"
+                android:text="@string/_4"
                 style="@style/CalcBtn" />
             <Button
                 android:id="@+id/btn5"
-                android:text="5"
+                android:text="@string/_5"
                 style="@style/CalcBtn"
                 />
             <Button
                 android:id="@+id/btn6"
-                android:text="6"
+                android:text="@string/_6"
                 style="@style/CalcBtn"
                 />
             <Button
                 android:id="@+id/btnmin"
-                android:text="−"
+                android:text="@string/minus"
                 style="@style/CalcBtn"
                 android:textSize="40sp"
                 />
@@ -165,22 +165,22 @@
 
             <Button
                 android:id="@+id/btn1"
-                android:text="1"
+                android:text="@string/_1"
                 style="@style/CalcBtn" />
             <Button
                 android:id="@+id/btn2"
-                android:text="2"
+                android:text="@string/_2"
                 style="@style/CalcBtn"
                 />
             <Button
                 android:id="@+id/btn3"
-                android:text="3"
+                android:text="@string/_3"
                 style="@style/CalcBtn"
 
                 />
             <Button
                 android:id="@+id/btntambah"
-                android:text="+"
+                android:text="@string/plus"
                 style="@style/CalcBtn"
                 android:textSize="40sp"
                 />
@@ -195,16 +195,16 @@
 
             <Button
                 android:id="@+id/btnkoma"
-                android:text="."
+                android:text="@string/koma"
                 style="@style/CalcBtn" />
             <Button
                 android:id="@+id/btn0"
-                android:text="0"
+                android:text="@string/_0"
                 style="@style/CalcBtn"
                 />
             <Button
                 android:id="@+id/btnsamadengan"
-                android:text="="
+                android:text="@string/samadengan"
                 style="@style/CalcBtn"
                 android:layout_weight="2"
                 android:textSize="40sp"
